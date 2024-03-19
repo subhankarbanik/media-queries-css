@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        display: grid;
+        width: 100%;
+        height: 70vh;
+        grid-template-areas:
+          "a1 a1 a2 a2 a2"
+          "a1 a1 a2 a2 a2"
+          "a1 a1 a2 a2 a2"
+          "a3 a3 a3 a3 a3";
+      }
+
+      #container > div:nth-of-type(3) {
+        background-color: #222222;
+        color: white;
+      }
+      #container > div:nth-child(1) {
+        grid-area: a1;
+        background-color: #02026f;
+      }
+      #container > div:nth-child(2) {
+        grid-area: a2;
+        background-color: #3140af;
+        color: white;
+      }
+      #container > div:nth-child(3) {
+        grid-area: a3;
+      }
+      #footer > div > img {
+        width: 20px;
+        border-radius: 10px;
+      }
+      #footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 60px;
+
+        padding: 0px 20px 0px 20px;
+      }
+      #footer > div > span {
+        padding: 5px;
+      }
+      #logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      #logo > img {
+        
+      }
+      #navigation {
+        display: flex;
+        justify-content: space-around;
+      }
+      #navigation > div > ul > li {
+        padding-bottom: 10px;
+      }
+      @media screen and (max-width: 1000px) {
+        #container {
+          width: 100%;
+          display: grid;
+          grid-template-areas:
+            "a2"
+            "a1"
+            "a3";
+        }
+        #footer > div {
+          margin: auto;
+        }
+
+        #footer > div:nth-child(1) {
+          display: none;
+        }
+      }
+      @media screen and (max-width: 400px) {
+        #container {
+          display: grid;
+          grid-template-areas:
+            "a3"
+            "a2"
+            "a1";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="logo">
+        <img
+          src="https://yt3.googleusercontent.com/rdtdzeTQtjoPQiYuyIaNwulo-DD_72PcKSHyDRTANQMhg5_h8W8ig1PRJZBBY5mcBs81sUWcqQ=s176-c-k-c0x00ffffff-no-rj"
+          alt=""
+        />
+      </div>
+      <div id="navigation">
+        <div>
+          <ul>
+            <h4>Shop</h4>
+            <li>Gift cards</li>
+            <li>Etsy Registry</li>
+            <li>Etsy blog</li>
+            <li>Etsy United Kingdom</li>
+            <li>Etsy Germany</li>
+            <li>Etsy Canada</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <h4>Sell</h4>
+            <li>Sell on Etsy</li>
+            <li>Teams</li>
+            <li>Forums</li>
+            <li>Affiliates & Creators</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <h4>About</h4>
+            <li>Easy Inc</li>
+            <li>Policies</li>
+            <li>Investors</li>
+            <li>Careers</li>
+            <li>Press</li>
+            <li>Impact</li>
+          </ul>
+        </div>
+      </div>
+      <div id="footer">
+        <div>
+          <img
+            src="data:image/png;base64,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"
+            alt=""
+          />
+          <span>India |</span>
+          <span>English |</span>
+          <span>₹ INR |</span>
+        </div>
+        <div>
+          <span>© 2024 Etsy, Inc. | </span><span>Terms of Use |</span
+          ><span>Privacy |</span><span>Interest-based ads |</span
+          ><span>Local Shops |</span><span> Regions</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

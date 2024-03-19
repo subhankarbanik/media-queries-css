@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #parent {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+      }
+      button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        background-color: red;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .child {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        color: white;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 40%;
+        left: 45%;
+        display: none;
+      }
+
+      button:active {
+        display: none;
+      }
+      button:active + .child {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="parent">
+      <button>Read Info</button>
+      <div class="child">This is Info</div>
+    </div>
+  </body>
+</html>
